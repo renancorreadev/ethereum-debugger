@@ -1,0 +1,13 @@
+{
+  "name": "ethereum-debugger",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "app": "cd packages/app && ng serve",
+    "bootstrap": "lerna bootstrap"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
