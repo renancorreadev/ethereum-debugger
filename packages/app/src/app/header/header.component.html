@@ -1,0 +1,17 @@
+<header class="w-full bg-gray-800 text-white p-4 flex justify-between items-center fixed top-0 left-0 z-50 shadow-md">
+    <h1 class="text-lg font-bold">Ethereum Debugger</h1>
+    <div>
+      <button
+        *ngIf="!walletConnected"
+        (click)="connectWallet()"
+        class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-all duration-300"
+      >
+        Connect Wallet
+      </button>
+  
+      <div *ngIf="walletConnected" class="text-sm font-mono">
+        {{ userAddress | slice:0:6 }}...{{ userAddress | slice:-4 }}
+      </div>
+    </div>
+  </header>
+  

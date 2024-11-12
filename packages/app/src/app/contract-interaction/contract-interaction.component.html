@@ -1,0 +1,25 @@
+<div class="p-6 max-w-md mx-auto bg-white rounded-xl shadow-md space-y-4">
+    <h2 class="text-2xl font-bold">Interação com o Contrato ERC20</h2>
+  
+    <div>
+      <button (click)="connectToContract()" class="btn-primary">Conectar ao Contrato</button>
+    </div>
+  
+    <div class="space-y-2">
+      <label>Endereço da Carteira</label>
+      <input [(ngModel)]="walletAddress" type="text" placeholder="Digite o endereço da carteira" class="input"/>
+    </div>
+  
+    <div>
+      <button (click)="getBalance()" class="btn-secondary">Ver Saldo</button>
+      <div *ngIf="balance">Saldo: {{ balance }} Tokens</div>
+    </div>
+  
+    <div class="space-y-2">
+      <label>Quantidade</label>
+      <input [(ngModel)]="amount" type="text" placeholder="Digite a quantidade" class="input"/>
+    </div>
+  
+    <button (click)="transferTokens()" class="btn-primary">Transferir Tokens</button>
+  </div>
+  
