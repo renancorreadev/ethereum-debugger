@@ -1,25 +1,64 @@
-<div class="p-6 max-w-md mx-auto bg-white rounded-xl shadow-md space-y-4">
-    <h2 class="text-2xl font-bold">Interação com o Contrato ERC20</h2>
-  
-    <div>
-      <button (click)="connectToContract()" class="btn-primary">Conectar ao Contrato</button>
-    </div>
-  
-    <div class="space-y-2">
-      <label>Endereço da Carteira</label>
-      <input [(ngModel)]="walletAddress" type="text" placeholder="Digite o endereço da carteira" class="input"/>
-    </div>
-  
-    <div>
-      <button (click)="getBalance()" class="btn-secondary">Ver Saldo</button>
-      <div *ngIf="balance">Saldo: {{ balance }} Tokens</div>
-    </div>
-  
-    <div class="space-y-2">
-      <label>Quantidade</label>
-      <input [(ngModel)]="amount" type="text" placeholder="Digite a quantidade" class="input"/>
-    </div>
-  
-    <button (click)="transferTokens()" class="btn-primary">Transferir Tokens</button>
+<div class="p-8 max-w-md mx-auto bg-gradient-to-r from-gray-800 via-gray-900 to-black rounded-xl shadow-lg space-y-6 text-white">
+  <h2 class="text-3xl font-extrabold tracking-tight text-center text-purple-400">Interação com o Contrato ERC20</h2>
+
+  <div class="flex justify-center">
+    <button 
+      (click)="connectToContract()" 
+      class="w-full sm:w-auto px-6 py-2 bg-gradient-to-r from-purple-500 via-indigo-500 to-blue-500 hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-105 text-white font-semibold rounded-lg shadow-md">
+      Conectar ao Contrato
+    </button>
   </div>
+
+  <div class="space-y-2">
+    <label class="block text-gray-300 font-semibold">Endereço da Carteira</label>
+    <input 
+      [(ngModel)]="walletAddress" 
+      type="text" 
+      placeholder="Digite o endereço da carteira" 
+      class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 text-gray-300 placeholder-gray-500"
+    />
+  </div>
+
+  <div class="flex flex-col items-start">
+    <button 
+      (click)="getBalance()" 
+      class="w-full sm:w-auto px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-purple-500 hover:to-blue-500 transition-all duration-300 transform hover:scale-105 text-white font-semibold rounded-lg shadow-md">
+      Ver Saldo
+    </button>
+    <div *ngIf="balance" class="mt-2 text-sm text-green-400">Saldo: {{ balance }} Tokens</div>
+  </div>
+
+  <div class="flex flex-col gap-4">
+
+    <div class="space-y-2">
+      <label class="block text-gray-300 font-semibold">Quantidade</label>
+      <input 
+        [(ngModel)]="amount" 
+        type="text" 
+        placeholder="Digite a quantidade" 
+        class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 text-gray-300 placeholder-gray-500"
+      />
+    </div>
+
+    
+    <div class="space-y-2">
+      <label class="block text-gray-300 font-semibold">Endereço do Destinatário</label>  <!-- Novo campo para endereço do destinatário -->
+      <input 
+        [(ngModel)]="recipientAddress" 
+        type="text" 
+        placeholder="Digite o endereço do destinatário" 
+        class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 text-gray-300 placeholder-gray-500"
+      />
+    </div>
   
+   
+  
+    <div class="flex justify-center mt-4">
+      <button 
+        (click)="transferTokens()" 
+        class="w-full sm:w-auto px-6 py-2 bg-gradient-to-r from-green-500 to-teal-500 hover:from-teal-500 hover:to-green-500 transition-all duration-300 transform hover:scale-105 text-white font-semibold rounded-lg shadow-md">
+        Transferir Tokens
+      </button>
+    </div>
+  </div>
+</div>
